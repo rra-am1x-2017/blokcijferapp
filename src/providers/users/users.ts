@@ -26,12 +26,9 @@ export class UsersProvider {
 
   constructor(public http: HttpClient) {
     this.http.get(this.url).subscribe((data: userObject[]) => {
-      // console.log(data);
       data.forEach((element: userObject) => {
-        // console.log(element.photo);
-        this.users.push(element);
+         this.users.push(element);
       });
-      // console.log(this.users[2].lastname);
     });
   }
 

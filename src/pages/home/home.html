@@ -27,12 +27,73 @@
             <ion-col col-7 class="tekst">
                 <ion-card>
                     <ion-card-header>
-                       <h3>Blok 1</h3>
+                       <h3>Cijfers AM1A jaar 1</h3>
                     </ion-card-header>                  
                     <ion-card-content>
-                      <div *ngFor="let rapport of rapporten" class="rij">             
-                        <div class="vak">{{rapport.vak}}</div>
-                        <div class="cijfer">{{rapport.cijfer}}</div>
+                        <ion-row>
+                            <ion-col col-4>
+                              <ion-row class="vak">periode</ion-row>
+                            </ion-col> 
+                            <ion-col col-2>
+                                <ion-row>1</ion-row>
+                            </ion-col> 
+                            <ion-col col-2>
+                                <ion-row>2</ion-row>
+                            </ion-col> 
+                            <ion-col col-2>
+                                <ion-row>3</ion-row>
+                            </ion-col> 
+                            <ion-col col-2>
+                                <ion-row>4</ion-row>
+                            </ion-col> 
+                          </ion-row>
+                      <div *ngFor="let rapport of rapporten" class="rij">
+                        <ion-row>
+                          <ion-col col-4>
+                            <ion-row class="vak">WEB</ion-row>
+                            <ion-row class="vak">GAME</ion-row>
+                            <ion-row class="vak">ENG</ion-row>
+                            <ion-row class="vak">SLB</ion-row>
+                            <ion-row class="vak">PROJ</ion-row>
+                            <ion-row class="vak">BLOK</ion-row>
+                          </ion-col> 
+                          <ion-col col-2>
+                              <ion-row>{{rapport.web}}</ion-row>
+                              <ion-row>{{rapport.game}}</ion-row>
+                              <ion-row>{{rapport.eng}}</ion-row>
+                              <ion-row>{{rapport.slb}}</ion-row>
+                              <ion-row>{{rapport.proj}}</ion-row>
+                              <ion-row>{{rapport.blok}}</ion-row>
+                          </ion-col> 
+                          <ion-col col-2>
+                              <ion-row>4,5</ion-row>
+                              <ion-row>4,5</ion-row>
+                              <ion-row>4,5</ion-row>
+                              <ion-row>4,5</ion-row>
+                              <ion-row>4,5</ion-row>
+                              <ion-row>4,5</ion-row>
+                          </ion-col> 
+                          <ion-col col-2>
+                              <ion-row>3,7</ion-row>
+                              <ion-row>3,7</ion-row>
+                              <ion-row>3,7</ion-row>
+                              <ion-row>3,7</ion-row>
+                              <ion-row>3,7</ion-row>
+                              <ion-row>3,7</ion-row>
+                          </ion-col> 
+                          <ion-col col-2>
+                              <ion-row>8,4</ion-row>
+                              <ion-row>8,4</ion-row>
+                              <ion-row>8,4</ion-row>
+                              <ion-row>8,4</ion-row>
+                              <ion-row>8,4</ion-row>
+                              <ion-row>8,4</ion-row>
+                          </ion-col> 
+                        </ion-row>
+                        <div>web:</div>           
+                        <div class="vak">{{rapport.web}}</div>
+                        <div class="cijfer">{{rapport.game}}</div>
+                        <hr>
                       </div>                      
                     </ion-card-content>                  
                   </ion-card>

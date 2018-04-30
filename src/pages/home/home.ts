@@ -1,14 +1,26 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
+import { RapportenProvider } from '../../providers/rapporten/rapporten'
+import { UsersProvider } from '../../providers/users/users'
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  public todos = [];
+  private todos = [];
+  private rapporten = [];
+  public users = [];
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController,
+              public alertCtrl: AlertController,
+              public rapportenProvider: RapportenProvider,
+              public usersProvider: UsersProvider ) {
+    this.rapporten = this.rapportenProvider.getRapporten();
+    this.users = this.usersProvider.getUsers();
+    console.log();
   }
 
   public openTodoAlert() {

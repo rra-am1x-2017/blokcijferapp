@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Hallo Ariejanus mijn matty
+      Overzicht Student
     </ion-title>
     <ion-buttons end>
       <button ion-button (click)="openTodoAlert()">
@@ -15,4 +15,62 @@
   <ion-list *ngFor="let todo of todos">
     <ion-item>{{todo}}</ion-item>
   </ion-list>
+
+
+
+  
+
+  
+
+      <ion-grid>
+        <ion-row>
+            <ion-col col-7 class="tekst">
+                <ion-card>
+                    <ion-card-header>
+                       <h3>Blok 1</h3>
+                    </ion-card-header>                  
+                    <ion-card-content>
+                      <div *ngFor="let rapport of rapporten" class="rij">             
+                        <div class="vak">{{rapport.vak}}</div>
+                        <div class="cijfer">{{rapport.cijfer}}</div>
+                      </div>                      
+                    </ion-card-content>                  
+                  </ion-card>
+            </ion-col>
+           
+            <ion-col col-5 class="tekst" *ngFor="let user of users" >
+                <ion-card>
+                    <ion-card-header>
+                       <h4>{{user.firstname}}</h4>
+                       <ion-img width="90.4px" height="120px" src="../../assets/imgs/fotos/{{user.photo}}" class="img-fluid"></ion-img>
+                    </ion-card-header>                  
+                    <ion-card-content>
+                      <h4>Woonplaats</h4>
+                      <p>Spakenburg</p>
+                      <h4>Absentie</h4>
+                      <p>647/128</p>
+                      <h4>Leeftijd</h4>
+                      <p>23</p>
+                    </ion-card-content>                  
+                  </ion-card>
+            </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-list *ngFor="let user of users">
+        <ion-img width="113" height="150" src="../../assets/imgs/fotos/{{user.photo}}"></ion-img>
+      </ion-list>
+
+      
+  
+      <ion-img width="113" height="150" src="../../assets/imgs/fotos/aart.jpg"></ion-img>
+    
+      <ion-img width="113" height="150" src="../../assets/imgs/fotos/kevin.jpg"></ion-img>      
+    
+      <ion-img width="113"  height="150" src="../../assets/imgs/fotos/emre.jpg"></ion-img>
+    
+      <ion-img width="113" height="150" src="../../assets/imgs/fotos/kiro.jpg"></ion-img>      
+   
+      <ion-img width="113" height="150" src="http://www.deroset.esy.es/images/ijsimages/walnoot-in-schil.jpg"></ion-img>        
+   
 </ion-content>

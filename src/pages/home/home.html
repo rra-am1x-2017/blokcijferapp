@@ -30,9 +30,16 @@
                        <h3>Cijfers AM1A jaar 1</h3>
                     </ion-card-header>                  
                     <ion-card-content>
-                        <ion-row>
+                      <ion-row>
+                        <ion-col col-4>
+                        </ion-col>
+                        <ion-col col-8 text-center>
+                          Periode
+                        </ion-col>
+                      </ion-row>
+                      <ion-row>
                             <ion-col col-4>
-                              <ion-row class="vak">periode</ion-row>
+                              <ion-row></ion-row>
                             </ion-col> 
                             <ion-col col-2>
                                 <ion-row>1</ion-row>
@@ -46,55 +53,32 @@
                             <ion-col col-2>
                                 <ion-row>4</ion-row>
                             </ion-col> 
-                          </ion-row>
-                      <div *ngFor="let rapport of rapporten" class="rij">
-                        <ion-row>
-                          <ion-col col-4>
-                            <ion-row class="vak">WEB</ion-row>
-                            <ion-row class="vak">GAME</ion-row>
-                            <ion-row class="vak">ENG</ion-row>
-                            <ion-row class="vak">SLB</ion-row>
-                            <ion-row class="vak">PROJ</ion-row>
-                            <ion-row class="vak">BLOK</ion-row>
-                          </ion-col> 
-                          <ion-col col-2>
-                              <ion-row>{{rapport.web}}</ion-row>
-                              <ion-row>{{rapport.game}}</ion-row>
+                      </ion-row>
+                      
+                      <ion-row>
+                        <ion-col col-3>
+                          <ion-row>DATA</ion-row>
+                          <ion-row>ENG</ion-row>
+                          <ion-row>GAME</ion-row>
+                          <ion-row>NED</ion-row>
+                          <ion-row>PROJ</ion-row>
+                          <ion-row>REK</ion-row>
+                          <ion-row>SLB</ion-row>
+                          <ion-row>WEB</ion-row>
+                          <ion-row>BLOK</ion-row>
+                        </ion-col>  
+                          <ion-col col-2 *ngFor="let rapport of rapporten">
+                              <ion-row>{{rapport.data}}</ion-row>
                               <ion-row>{{rapport.eng}}</ion-row>
-                              <ion-row>{{rapport.slb}}</ion-row>
+                              <ion-row>{{rapport.game}}</ion-row>
+                              <ion-row>{{rapport.ned}}</ion-row>
                               <ion-row>{{rapport.proj}}</ion-row>
+                              <ion-row>{{rapport.rek}}</ion-row>
+                              <ion-row>{{rapport.slb}}</ion-row>
+                              <ion-row>{{rapport.web}}</ion-row>
                               <ion-row>{{rapport.blok}}</ion-row>
-                          </ion-col> 
-                          <ion-col col-2>
-                              <ion-row>4,5</ion-row>
-                              <ion-row>4,5</ion-row>
-                              <ion-row>4,5</ion-row>
-                              <ion-row>4,5</ion-row>
-                              <ion-row>4,5</ion-row>
-                              <ion-row>4,5</ion-row>
-                          </ion-col> 
-                          <ion-col col-2>
-                              <ion-row>3,7</ion-row>
-                              <ion-row>3,7</ion-row>
-                              <ion-row>3,7</ion-row>
-                              <ion-row>3,7</ion-row>
-                              <ion-row>3,7</ion-row>
-                              <ion-row>3,7</ion-row>
-                          </ion-col> 
-                          <ion-col col-2>
-                              <ion-row>8,4</ion-row>
-                              <ion-row>8,4</ion-row>
-                              <ion-row>8,4</ion-row>
-                              <ion-row>8,4</ion-row>
-                              <ion-row>8,4</ion-row>
-                              <ion-row>8,4</ion-row>
-                          </ion-col> 
-                        </ion-row>
-                        <div>web:</div>           
-                        <div class="vak">{{rapport.web}}</div>
-                        <div class="cijfer">{{rapport.game}}</div>
-                        <hr>
-                      </div>                      
+                          </ion-col>
+                      </ion-row>                                           
                     </ion-card-content>                  
                   </ion-card>
             </ion-col>

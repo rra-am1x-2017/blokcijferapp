@@ -3,19 +3,6 @@ import { NavController, AlertController } from 'ionic-angular';
 import { RapportenProvider } from '../../providers/rapporten/rapporten'
 import { UsersProvider } from '../../providers/users/users'
 
-interface gradeObject {  
-  "firstname": string,
-  "infix": string,
-  "lastname": string,
-  "period": test[],
-  "user_id": number,
-  "photo": string
-}
-
-interface test {
-  game: number,
-  web: number
-}
 
 @Component({
   selector: 'page-home',
@@ -23,21 +10,26 @@ interface test {
 })
 export class HomePage {
   public todos = [];
-  public rapporten: gradeObject[] = [];
+  public rapporten = [];
   public users = [];
 
   constructor(public navCtrl: NavController,
               public alertCtrl: AlertController,
               public rapportenProvider: RapportenProvider,
               public usersProvider: UsersProvider ) {
-    this.rapporten = this.rapportenProvider.getRapporten();
-    console.log(this.rapporten);
-    //console.log(this.rapporten[0].period[0].game);
+  
     this.users = this.usersProvider.getUsers();
   }
 
   ionViewDidLoad() {
+    this.rapportenProvider.getRapporten()
+      .subscribe((data: any[]) => {
+        //console.log(JSON.parse(data[0].period)[0].game);
 
+        this.rapporten = data;
+        console.log(this.rapporten);
+
+      })
   }
 
   public openTodoAlert() {

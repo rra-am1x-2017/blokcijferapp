@@ -18,7 +18,7 @@
   
 
       <ion-grid>
-        <ion-row *ngFor="let rapport of rapporten">
+        <ion-row *ngFor="let rapport of rapporten; let i = index">
             <ion-col col-7 class="tekst">
                 <ion-card>
                     <ion-card-header>
@@ -61,18 +61,51 @@
                           <ion-row>SLB</ion-row>
                           <ion-row>WEB</ion-row>
                           <ion-row>BLOK</ion-row>
-                        </ion-col>  
-                          <ion-col col-2>
-                              <ion-row></ion-row>
-                              <ion-row>test</ion-row>
-                              <ion-row>test</ion-row>
-                              <ion-row>test</ion-row>
-                              <ion-row>test</ion-row>
-                              <ion-row>test</ion-row>
-                              <ion-row>test</ion-row>
-                              <ion-row>test</ion-row>
-                              <ion-row>test</ion-row>
-                          </ion-col>
+                        </ion-col> 
+                        <ion-col col-2 >
+                          <ion-row>test</ion-row>
+                          <ion-row>test</ion-row>
+                          <ion-row>{{rapport.period[0].game}}</ion-row>
+                          <ion-row>test</ion-row>
+                          <ion-row>test</ion-row>
+                          <ion-row>test</ion-row>
+                          <ion-row>test</ion-row>
+                          <ion-row>{{rapport.period[0].web}}</ion-row>
+                          <ion-row>test</ion-row>
+                        </ion-col>
+                        <ion-col col-2 >
+                          <ion-row>test</ion-row>
+                          <ion-row>test</ion-row>
+                          <ion-row>{{rapport.period[1].game}}</ion-row>
+                          <ion-row>test</ion-row>
+                          <ion-row>test</ion-row>
+                          <ion-row>test</ion-row>
+                          <ion-row>test</ion-row>
+                          <ion-row>{{rapport.period[1].web}}</ion-row>
+                          <ion-row>test</ion-row>
+                        </ion-col>
+                        <ion-col col-2 >
+                          <ion-row>test</ion-row>
+                          <ion-row>test</ion-row>
+                          <ion-row>{{rapport.period[2].game}}</ion-row>
+                          <ion-row>test</ion-row>
+                          <ion-row>test</ion-row>
+                          <ion-row>test</ion-row>
+                          <ion-row>test</ion-row>
+                          <ion-row>{{rapport.period[2].web}}</ion-row>
+                          <ion-row>test</ion-row>
+                        </ion-col>
+                        <ion-col col-2 >
+                          <ion-row>test</ion-row>
+                          <ion-row>test</ion-row>
+                          <ion-row>{{rapport.period[3].game}}</ion-row>
+                          <ion-row>test</ion-row>
+                          <ion-row>test</ion-row>
+                          <ion-row>test</ion-row>
+                          <ion-row>test</ion-row>
+                          <ion-row>{{rapport.period[3].web}}</ion-row>
+                          <ion-row>test</ion-row>
+                        </ion-col>
                       </ion-row>                                           
                     </ion-card-content>                  
                   </ion-card>
@@ -81,7 +114,7 @@
             <ion-col col-5 class="tekst" >
                 <ion-card>
                     <ion-card-header>
-                       <h4>{{rapport.firstname}}</h4>
+                       <h4>{{rapporten[i].firstname}}{{i}}</h4>
                        <ion-img width="90px" height="120px" src="../../assets/imgs/fotos/{{rapport.photo}}" class="img-fluid"></ion-img>
                     </ion-card-header>                  
                     <ion-card-content>

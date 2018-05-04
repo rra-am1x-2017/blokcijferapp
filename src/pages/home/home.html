@@ -15,15 +15,10 @@
   <ion-list *ngFor="let todo of todos">
     <ion-item>{{todo}}</ion-item>
   </ion-list>
-
-
-
-  
-
   
 
       <ion-grid>
-        <ion-row>
+        <ion-row *ngFor="let rapport of rapporten">
             <ion-col col-7 class="tekst">
                 <ion-card>
                     <ion-card-header>
@@ -56,7 +51,7 @@
                       </ion-row>
                       
                       <ion-row>
-                        <ion-col col-3>
+                        <ion-col col-3 >
                           <ion-row>DATA</ion-row>
                           <ion-row>ENG</ion-row>
                           <ion-row>GAME</ion-row>
@@ -67,27 +62,27 @@
                           <ion-row>WEB</ion-row>
                           <ion-row>BLOK</ion-row>
                         </ion-col>  
-                          <ion-col col-2 *ngFor="let rapport of rapporten">
-                              <ion-row>{{rapport.data}}</ion-row>
-                              <ion-row>{{rapport.eng}}</ion-row>
-                              <ion-row>{{rapport.game}}</ion-row>
-                              <ion-row>{{rapport.ned}}</ion-row>
-                              <ion-row>{{rapport.proj}}</ion-row>
-                              <ion-row>{{rapport.rek}}</ion-row>
-                              <ion-row>{{rapport.slb}}</ion-row>
-                              <ion-row>{{rapport.web}}</ion-row>
-                              <ion-row>{{rapport.blok}}</ion-row>
+                          <ion-col col-2>
+                              <ion-row></ion-row>
+                              <ion-row>test</ion-row>
+                              <ion-row>test</ion-row>
+                              <ion-row>test</ion-row>
+                              <ion-row>test</ion-row>
+                              <ion-row>test</ion-row>
+                              <ion-row>test</ion-row>
+                              <ion-row>test</ion-row>
+                              <ion-row>test</ion-row>
                           </ion-col>
                       </ion-row>                                           
                     </ion-card-content>                  
                   </ion-card>
             </ion-col>
            
-            <ion-col col-5 class="tekst" *ngFor="let user of users" >
+            <ion-col col-5 class="tekst" >
                 <ion-card>
                     <ion-card-header>
-                       <h4>{{user.firstname}}</h4>
-                       <ion-img width="90.4px" height="120px" src="../../assets/imgs/fotos/{{user.photo}}" class="img-fluid"></ion-img>
+                       <h4>{{rapport.firstname}}</h4>
+                       <ion-img width="90px" height="120px" src="../../assets/imgs/fotos/{{rapport.photo}}" class="img-fluid"></ion-img>
                     </ion-card-header>                  
                     <ion-card-content>
                       <h4>Woonplaats</h4>
@@ -101,21 +96,4 @@
             </ion-col>
         </ion-row>
       </ion-grid>
-
-      <ion-list *ngFor="let user of users">
-        <ion-img width="113" height="150" src="../../assets/imgs/fotos/{{user.photo}}"></ion-img>
-      </ion-list>
-
-      
-  
-      <ion-img width="113" height="150" src="../../assets/imgs/fotos/aart.jpg"></ion-img>
-    
-      <ion-img width="113" height="150" src="../../assets/imgs/fotos/kevin.jpg"></ion-img>      
-    
-      <ion-img width="113"  height="150" src="../../assets/imgs/fotos/emre.jpg"></ion-img>
-    
-      <ion-img width="113" height="150" src="../../assets/imgs/fotos/kiro.jpg"></ion-img>      
-   
-      <ion-img width="113" height="150" src="http://www.deroset.esy.es/images/ijsimages/walnoot-in-schil.jpg"></ion-img>        
-   
 </ion-content>

@@ -1,0 +1,7 @@
+<script>
+  var obj = { naam: [{vn: "Arjan", an: "Ruijter"}]};
+  var my_json = JSON.stringify(obj);
+  console.log(my_json);
+  var show = JSON.parse(my_json);
+  console.log(show.naam[0].vn);
+</script>

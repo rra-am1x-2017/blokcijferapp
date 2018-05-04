@@ -2,16 +2,28 @@ import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 import { RapportenProvider } from '../../providers/rapporten/rapporten'
 import { UsersProvider } from '../../providers/users/users'
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
+interface gradeObject {  
+  "firstname": string,
+  "infix": string,
+  "lastname": string,
+  "period": test[],
+  "user_id": number,
+  "photo": string
+}
+
+interface test {
+  game: number,
+  web: number
+}
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  private todos = [];
-  private rapporten = [];
+  public todos = [];
+  public rapporten: gradeObject[] = [];
   public users = [];
 
   constructor(public navCtrl: NavController,
@@ -19,8 +31,13 @@ export class HomePage {
               public rapportenProvider: RapportenProvider,
               public usersProvider: UsersProvider ) {
     this.rapporten = this.rapportenProvider.getRapporten();
+    console.log(this.rapporten);
+    //console.log(this.rapporten[0].period[0].game);
     this.users = this.usersProvider.getUsers();
-    console.log();
+  }
+
+  ionViewDidLoad() {
+
   }
 
   public openTodoAlert() {

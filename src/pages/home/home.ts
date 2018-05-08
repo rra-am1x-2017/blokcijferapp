@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
-import { RapportenProvider } from '../../providers/rapporten/rapporten'
-import { UsersProvider } from '../../providers/users/users'
-
+import { RapportenProvider } from '../../providers/rapporten/rapporten';
+import { UsersProvider } from '../../providers/users/users';
 
 @Component({
   selector: 'page-home',
@@ -24,21 +23,24 @@ export class HomePage {
   ionViewDidLoad() {
     this.rapportenProvider.getRapporten()
       .subscribe((data: any[]) => {
-        //console.log(JSON.parse(data[0].period)[0].game);
-
         this.rapporten = data;
-        console.log(this.rapporten);
+        //console.log(this.rapporten);
 
       })
   }
 
-  public openTodoAlert() {
+  public openTodoAlert(rapport, data, cijfer, vak) {
+    console.log(rapport);
+    console.log(data);
+    console.log(cijfer);
+    console.log(vak);
+
     let addTodoAlert = this.alertCtrl.create({
-      title: "Klusje",
-      message: "Tik een nieuwe klus in",
+      title: "Cijfer is: " + rapport.firstname,
+      message: "Voer een nieuw cijfer in",
       inputs: [
         {
-          type: "text",
+          type: "number",
           name: "nameTodoInput"
         }
       ],
@@ -51,7 +53,9 @@ export class HomePage {
           handler: (inputData) => {
             let todoText;
             todoText = inputData.nameTodoInput;
-            this.todos.push(todoText);
+            // this.todos.push(todoText);
+            this.rapportenProvider.addRapporten(todoText, rapport, data, cijfer, vak);
+            this.navCtrl.push(HomePage);
           }
         }
 
@@ -60,4 +64,31 @@ export class HomePage {
     addTodoAlert.present();
   }
 
+  private gradeCol(grade:any): string {
+    if (typeof(grade) == 'number') {
+      return grade >= 5.5 ? 'row grade-vol': 'row grade-onv';
+    } 
+    else if (typeof(grade) == 'string')
+      if ((grade == 'V') || (grade == 'G')) {
+        return 'row grade-vol';
+      } else {
+        return 'row grade-onv';        
+      }
+      return 'row';
+  }
+
+  private age(date){
+    let now = new Date();
+    let bday = new Date(date);
+    
+    if ( (now.getMonth() >= bday.getMonth()) && (now.getDate() >= bday.getDate())) {
+      return new Date().getFullYear() - new Date(date).getFullYear() ;      
+    } else {
+      return (new Date().getFullYear() - new Date(date).getFullYear()) - 1;     
+    }
+  }
+
+  private refresh() {
+    this.navCtrl.push(HomePage);
+  }
 }

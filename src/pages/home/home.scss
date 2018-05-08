@@ -1,16 +1,65 @@
 page-home {
+  $grade-color-onv: red; // Kleur onvoldoende
+  $grade-color-vol: green; // Kleur voldoende
+
+  .grade-onv {
+    // Kleur als het cijfer onvoldoende is
+    color: $grade-color-onv;
+  }
+
+  .grade-vol {
+    // Kleur als het cijfer voldoende is
+    color: $grade-color-vol;
+  }
+
+  ion-card-content.card-content.card-content-md {
+    padding: 0px 2px;
+  }
+
+  ion-card-header.card-header.card-header-md img {
+    width: 90px;
+    height: 120px;
+    display: inline-block;
+    text-align: center;
+  }
+
+ion-card.card.card-md {
+  width: calc(100% - 20px);
+  margin: 10px 10px;
+  border: 2px solid lightblue;
+}
+
+
+
+
+  .card-content-md {
+    padding: 13px 16px;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    text-align: center;
+  }
+
+  .bold {
+    font-weight: bolder;
+    color:  grey;
+  }
+
+  .card-header-md {
+    text-align: center;
+  }
   
   .tekst {
     background-color: rgb(236, 236, 236);
     margin: 0;
     padding: 0;
     white-space: normal;
-    h4 {
+    h3, h4, h5 {
       font-weight: bolder;
+      text-align: center;
     }
 
     .vak {
-      border-bottom: 0px solid black;
+      border-bottom: 1px solid black;
       display: inline-block;
       font-weight: bolder;
       padding: 0px;
@@ -40,6 +89,17 @@ page-home {
 
   }
 
+  ion-card.card.card-md {
+    width: calc(100% - 7.5px);
+  }
+
+  .zeven ion-card.card.card-md  {
+    margin: 10px 2.5px 10px 5px;
+  }
+
+  .vijf ion-card.card.card-md{
+    margin: 10px 5px 10px 2.5px;    
+  }
 
   .foto {
     background-color: rgb(236, 236, 236);
@@ -48,4 +108,8 @@ page-home {
   ::-webkit-scrollbar{
     display:none;
     }
+  
+    ion-row.row {
+    text-align: center;
+  }
 }

@@ -1,11 +1,11 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Overzicht Student
+      Overzicht Studenten AM1A
     </ion-title>
     <ion-buttons end>
-      <button ion-button (click)="openTodoAlert()">
-        <ion-icon name="add"></ion-icon>
+      <button ion-button (click)="refresh()">
+        <ion-icon name="refresh"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -18,40 +18,40 @@
   
 
       <ion-grid>
-        <ion-row *ngFor="let rapport of rapporten; let i = index">
-            <ion-col col-7 class="tekst">
+        <ion-row *ngFor="let rapport of rapporten">
+            <ion-col col-7 class="tekst zeven">
                 <ion-card>
                     <ion-card-header>
-                       <h3>Cijfers AM1A jaar 1</h3>
+                       <h3><ion-icon name="attach"></ion-icon>  Cijfers AM1A jaar 1</h3>
                     </ion-card-header>                  
                     <ion-card-content>
-                      <ion-row>
+                      <!-- <ion-row>
                         <ion-col col-4>
                         </ion-col>
                         <ion-col col-8 text-center>
-                          Periode
+                          <h4>Periode</h4>
                         </ion-col>
-                      </ion-row>
-                      <ion-row>
+                      </ion-row> -->
+                      <ion-row class="bold">
                             <ion-col col-4>
                               <ion-row></ion-row>
                             </ion-col> 
                             <ion-col col-2>
-                                <ion-row>1</ion-row>
+                                <ion-row>P1</ion-row>
                             </ion-col> 
                             <ion-col col-2>
-                                <ion-row>2</ion-row>
+                                <ion-row>P2</ion-row>
                             </ion-col> 
                             <ion-col col-2>
-                                <ion-row>3</ion-row>
+                                <ion-row>P3</ion-row>
                             </ion-col> 
                             <ion-col col-2>
-                                <ion-row>4</ion-row>
+                                <ion-row>P4</ion-row>
                             </ion-col> 
                       </ion-row>
                       
                       <ion-row>
-                        <ion-col col-3 >
+                        <ion-col col-4 class="bold">
                           <ion-row>DATA</ion-row>
                           <ion-row>ENG</ion-row>
                           <ion-row>GAME</ion-row>
@@ -61,69 +61,36 @@
                           <ion-row>SLB</ion-row>
                           <ion-row>WEB</ion-row>
                           <ion-row>BLOK</ion-row>
+                        </ion-col>
+                        <ion-col col-2 *ngFor="let data of rapport.period">
+                          <ion-row [class]="gradeCol(data.data)" (click)="openTodoAlert(rapport.id, data.period, data.data, 'datab')">{{data.data}}</ion-row>
+                          <ion-row [class]="gradeCol(data.eng)" (click)="openTodoAlert(rapport.id, data.period, data.data, 'eng')">{{data.eng}}</ion-row>
+                          <ion-row [class]="gradeCol(data.game)" (click)="openTodoAlert(rapport.id, data.period, data.data, 'game')">{{data.game}}</ion-row>
+                          <ion-row [class]="gradeCol(data.ned)" (click)="openTodoAlert(rapport.id, data.period, data.data, 'ned')">{{data.ned}}</ion-row>
+                          <ion-row [class]="gradeCol(data.proj)" (click)="openTodoAlert(rapport.id, data.period, data.data, 'proj')">{{data.proj}}</ion-row>
+                          <ion-row [class]="gradeCol(data.rek)" (click)="openTodoAlert(rapport.id, data.period, data.data, 'rek')">{{data.rek}}</ion-row>
+                          <ion-row [class]="gradeCol(data.slb)" (click)="openTodoAlert(rapport.id, data.period, data.data, 'slb')">{{data.slb}}</ion-row>
+                          <ion-row [class]="gradeCol(data.web)" (click)="openTodoAlert(rapport.id, data.period, data.data, 'web')">{{data.web}}</ion-row>
+                          <ion-row [class]="gradeCol(data.blok)" (click)="openTodoAlert(rapport.id, data.period, data.data, 'blok')">{{data.blok}}</ion-row>
                         </ion-col> 
-                        <ion-col col-2 >
-                          <ion-row>test</ion-row>
-                          <ion-row>test</ion-row>
-                          <ion-row>{{rapport.period[0].game}}</ion-row>
-                          <ion-row>test</ion-row>
-                          <ion-row>test</ion-row>
-                          <ion-row>test</ion-row>
-                          <ion-row>test</ion-row>
-                          <ion-row>{{rapport.period[0].web}}</ion-row>
-                          <ion-row>test</ion-row>
-                        </ion-col>
-                        <ion-col col-2 >
-                          <ion-row>test</ion-row>
-                          <ion-row>test</ion-row>
-                          <ion-row>{{rapport.period[1].game}}</ion-row>
-                          <ion-row>test</ion-row>
-                          <ion-row>test</ion-row>
-                          <ion-row>test</ion-row>
-                          <ion-row>test</ion-row>
-                          <ion-row>{{rapport.period[1].web}}</ion-row>
-                          <ion-row>test</ion-row>
-                        </ion-col>
-                        <ion-col col-2 >
-                          <ion-row>test</ion-row>
-                          <ion-row>test</ion-row>
-                          <ion-row>{{rapport.period[2].game}}</ion-row>
-                          <ion-row>test</ion-row>
-                          <ion-row>test</ion-row>
-                          <ion-row>test</ion-row>
-                          <ion-row>test</ion-row>
-                          <ion-row>{{rapport.period[2].web}}</ion-row>
-                          <ion-row>test</ion-row>
-                        </ion-col>
-                        <ion-col col-2 >
-                          <ion-row>test</ion-row>
-                          <ion-row>test</ion-row>
-                          <ion-row>{{rapport.period[3].game}}</ion-row>
-                          <ion-row>test</ion-row>
-                          <ion-row>test</ion-row>
-                          <ion-row>test</ion-row>
-                          <ion-row>test</ion-row>
-                          <ion-row>{{rapport.period[3].web}}</ion-row>
-                          <ion-row>test</ion-row>
-                        </ion-col>
                       </ion-row>                                           
                     </ion-card-content>                  
                   </ion-card>
             </ion-col>
            
-            <ion-col col-5 class="tekst" >
+            <ion-col col-5 class="tekst vijf" >
                 <ion-card>
                     <ion-card-header>
-                       <h4>{{rapporten[i].firstname}}{{i}}</h4>
-                       <ion-img width="90px" height="120px" src="../../assets/imgs/fotos/{{rapport.photo}}" class="img-fluid"></ion-img>
+                       <h4>{{rapport.firstname}}</h4>
+                       <img [src]="rapport.photo" height="20px">
                     </ion-card-header>                  
                     <ion-card-content>
-                      <h4>Woonplaats</h4>
-                      <p>Spakenburg</p>
+                      <h5>Woonplaats</h5>
+                      <p text-center>{{rapport.residence}}</p>
                       <h4>Absentie</h4>
-                      <p>647/128</p>
+                      <p text-center>{{rapport.absence}}</p>
                       <h4>Leeftijd</h4>
-                      <p>23</p>
+                      <p text-center>{{age(rapport.birthday)}}</p>
                     </ion-card-content>                  
                   </ion-card>
             </ion-col>

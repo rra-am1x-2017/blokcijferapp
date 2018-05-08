@@ -1,4 +1,5 @@
 <?php
+  header('Access-Control-Allow-Origin: *');
   include("connect_db.php");
 
   $query = "SELECT * FROM `users`";

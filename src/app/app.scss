@@ -17,3 +17,26 @@
 ion-app.md [padding] .scroll-content {
   padding: 2px;
 }
+
+
+
+
+.cssCustom {
+  .alert-title {
+    font-size: 12px;
+    line-height: 0.6;
+  }
+
+  .alert-head {
+    padding: 2px 24px;
+  }
+
+  .alert-message {
+    padding-bottom: 2px;
+  }
+
+  .alert-input-group {
+    padding: 2px 24px;
+  }
+}
+
